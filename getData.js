@@ -1,6 +1,5 @@
 const fs = require("fs");
 const fetch = require("node-fetch");
-
 function getData(number) {
   return fetch("https://api.datos.gob.mx/v1/compranet?page=" + number, {
     method: "GET"
