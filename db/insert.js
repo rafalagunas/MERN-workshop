@@ -35,12 +35,13 @@ fs.readFile("../results.json", function read(err, data) {
       .then(() => mongoose.connection.close());
   });
 */
-
+  console.log(
+    "inserting " + parsed_data.length + " purchases  \n please wait \n ... "
+  );
   for (var i = 0; i < parsed_data.length; i++) {
-    console.log("inserting purchase #" + [i] + "  \n please wait \n ... ");
     purchaseCollection
       .create(parsed_data[i])
-      .then(() => console.log(""))
+      .then(resp => console.log(resp))
       .then(() => mongoose.connection.close());
   }
 });
