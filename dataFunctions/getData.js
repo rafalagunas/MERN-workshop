@@ -16,7 +16,7 @@ function mainFunction() {
     getData(i)
       .then(response => {
         console.log(response);
-        fs.writeFile("../files/" + i + ".json", response, function(err) {
+        fs.writeFile("./files/" + i + ".json", response, function(err) {
           if (err) {
             return console.log(err);
           }

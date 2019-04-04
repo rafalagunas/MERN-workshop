@@ -6,10 +6,7 @@ var mongoosePaginate = require("mongoose-paginate");
 const purchaseModel = new mongoose.Schema({
   ID: "string",
   GOBIERNO: "string",
-  SIGLAS: "string",
-  DEPENDENCIA: "string",
-  CLAVEUC: "string",
-  NOMBRE_DE_LA_UC: "string"
+  DEPENDENCIA: "string"
 });
 
 purchaseModel.plugin(mongoosePaginate);

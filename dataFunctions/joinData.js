@@ -66,6 +66,16 @@ function returnData() {
                 .replace(/\\/g, "") +
               '"' +
               "," +
+              '"PLANTILLA_EXPEDIENTE":' +
+              '"' +
+              content[i].PLANTILLA_EXPEDIENTE +
+              '"' +
+              "," +
+              '"CARACTER":' +
+              '"' +
+              content[i].CARACTER +
+              '"' +
+              "," +
               '"IMPORTE_CONTRATO":' +
               '"' +
               content[i].IMPORTE_CONTRATO +
