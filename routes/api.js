@@ -8,7 +8,8 @@ let purchaseCollection = mongoose.model("purchase", purchaseModel);
 router.get("/compranet", function(req, res) {
   if (req.query.page) {
     var page = req.params.page;
-    purchaseCollection.paginate({}, { page: 1, limit: 1000 }, function(
+    var limit = 1000;
+    purchaseCollection.paginate({}, { page: page, limit: limit }, function(
       err,
       result
     ) {
@@ -21,10 +22,9 @@ router.get("/compranet", function(req, res) {
       // result.pages
     });
   } else {
-    purchaseCollection.paginate({}, { page: 1, limit: 1000 }, function(
-      err,
-      result
-    ) {
+    var page = 1;
+    var limit = 0;
+    purchaseCollection.find({}, "", function(err, result) {
       var resp = JSON.stringify(result);
       res.end(resp);
       // result.docs
