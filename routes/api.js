@@ -22,8 +22,6 @@ router.get("/compranet", function(req, res) {
       // result.pages
     });
   } else {
-    var page = 1;
-    var limit = 0;
     purchaseCollection.find({}, "", function(err, result) {
       var resp = JSON.stringify(result);
       res.end(resp);
