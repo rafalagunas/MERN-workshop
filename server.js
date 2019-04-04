@@ -9,11 +9,11 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 //CALL ROUTES
 const routes = require("./routes/api");
+require("dotenv").config();
+const user = process.env.PASSWORD;
+const pass = process.env.PASSWORD;
 mongoose
-  .connect(
-    "mongodb+srv://admin:Sc5aeo8L3oDgnrSN@cluster0-ageas.mongodb.net/compranet",
-    { useNewUrlParser: true }
-  )
+  .connect(process.env.DB, { useNewUrlParser: true })
   .then(() => console.log(`Database connected successfully`))
   .catch(err => console.log(err));
 mongoose.Promise = global.Promise;

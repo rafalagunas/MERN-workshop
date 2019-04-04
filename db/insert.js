@@ -1,10 +1,7 @@
 const mongoose = require("mongoose");
 const fs = require("fs");
 const purchaseModel = require("../models/purchase");
-mongoose.connect(
-  "mongodb+srv://admin:Sc5aeo8L3oDgnrSN@cluster0-ageas.mongodb.net/compranet",
-  { useNewUrlParser: true }
-);
+mongoose.connect(process.env.DB, { useNewUrlParser: true });
 
 let purchaseCollection = mongoose.model("purchase", purchaseModel);
 

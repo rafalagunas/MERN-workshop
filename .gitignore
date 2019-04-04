@@ -1,2 +1,5 @@
 results.json
 files/
+node_modules
+results.json
+.env
